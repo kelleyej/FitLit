@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>FitLit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Honk&family=Poppins:ital,wght@0,200;1,100;1,200;1,400&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header> 
+      <h1>My Name</h1>
+      <div class="profile-toggle" role="button" tabindex=0>
+        <p class="profile-toggle-text">view profile</p>
+        <img class="buttons" id="user-profile-button" alt="Simple profile of a person" src="./images/profile-icon.png" />
+      </div>
+    </header>
+    <section class="error-display hidden">WHOOPS! SOMETHING'S NOT WORKING!<br></section>
+    <main class="widget-container" id="widgets">
+      <div class="today-form">
+        <form>
+          <div class="form-style">
+            <label for="hydro">Ounces drank:</label>
+          </div>
+          <input class="hydro-field" id="hydro" type="number" min="0" placeholder="Enter Ounces" required>
+          <div class="form-style">
+            <label for="hours">Hours slept:</label>
+          </div>
+          <input class="hours-field" id="hours" type="number" min="0" max="24" placeholder="Enter Hours" required>
+          <div class="form-style">
+            <label for="sleep">Sleep quality (0-5):</label>
+          </div>
+          <input class="quality-field" id="sleep" type="number" min="0" max="5" step=".1" placeholder="Enter Sleep Score" required>
+          <div class="form-style">
+            <button class="submit-button" type="submit">Add Today's Data!</button>
+          </div>
+        </form>
+      </div>
+      <div class="party-avg-steps">
+        <section class="party-widget party-background">
+          <img class="step-party-button" tabindex=0 role="button" src="./images/step-party.png" alt="Step party">
+          <h2 class="challenge-title hidden">Can Your Team Beat the FitLit Average?</h2>
+          <fieldset class="hidden" id="friend-selectors">
+            <!-- friend selectors will go here -->
+          </fieldset>
+          <div class="hidden" id="announce-results"></div>
+          <div class="hidden firework-1"></div>
+          <div class="hidden firework-2"></div>
+          <div class="hidden firework-3"></div>
+          <button class="hidden" id="lets-party">LET'S PARTY!</button>
+        </section>
+        <section class="averages-widget">
+          <h2 id="avg-title">Your Averages</h2>
+          <p id="avgs"></p>
+        </section>
+        <section class="steps-widget">
+          <h2 class="steps-header">Steps</h2>
+          <p id="steps"></p>
+        </section>
+      </div>
+      <div class="week-info">
+        <section class="hydration">
+          <div class="mode">
+            <img class="graph-icon" id="hydro-button" tabindex=0 role="button" src="./images/graph-icon.png" alt="bar graph icon">
+          </div>
+          <h2 id="hy-title">Hydration</h2>
+          <p id="hydro-week" class="week"></p>
+          <div id="hydro-chart-container" class="hidden">
+            <canvas id="hydro-chart"></canvas>
+          </div>
+        </section>
+        <section class="hours">
+          <div class="mode">
+            <img class="graph-icon" id="hours-button" tabindex=0 role="button" src="./images/graph-icon.png" alt="bar graph icon">
+          </div>
+          <h2 id="ho-title">Hours Slept</h2>
+          <p id="sleep-hours" class="week"></p>
+          <div id="hours-chart-container" class="hidden">
+            <canvas id="hours-chart"></canvas>
+          </div>
+        </section>
+        <section class="quality">
+          <div class="mode">
+            <img class="graph-icon" id="quality-button" tabindex=0 role="button" src="./images/graph-icon.png" alt="bar graph icon">
+          </div>
+          <h2 id="q-title">Sleep Quality</h2>
+          <p id="sleep-quality" class="week"></p>
+          <div id="quality-chart-container" class="hidden">
+            <canvas id="quality-chart"></canvas>
+          </div>
+        </section>
+      </div>
+    </main>
+    <aside class="user-profile hidden" id="user-profile">
+      <img src="./images/profile-photo.png" alt="user profile picture of Richard Simmons">
+      <h2>Contact Info</h2>
+      <h3>Address:</h3>
+      <p id="address">addres here</p>
+      <h3>Email:</h3>
+      <p id="email">email here</p>
+      <section id="friends-display">
+        <!-- this is wrapped in case we want to add icons or other elements for the friends -->
+        <h2>Friends</h2>
+        <p id="friends-list"></p>
+      </section>
+    </aside>
+    <script src="bundle.js"></script>
+  </body>
+</html>
